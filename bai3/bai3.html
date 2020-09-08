@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book App</title>
+  </head>
+  <body>
+    <div id="book-app"></div>
+
+    <template id="main-screen">
+      <form>
+        <label>
+          Tên quyển sách
+          <input type="text" id="nameBook" placeholder="Tên quyển sách" />
+        </label>
+        <label>
+          Tên tác giả
+          <input type="text" id="author" placeholder="Tên tác giả" />
+        </label>
+
+        <button type="submit">Thêm</button>
+      </form>
+      <h2>My Books</h2>
+      <div id="listBooks"></div>
+    </template>
+
+    <template id="bookItem">
+      <div id="nameBook"></div>
+      <div id="author"></div>
+      <input type="checkbox" id="isRead" />
+    </template>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-firestore.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyCVQvq__61ri4BO9ribFQr7MDM93sgATnI",
+        authDomain: "book-app-7cc17.firebaseapp.com",
+        databaseURL: "https://book-app-7cc17.firebaseio.com",
+        projectId: "book-app-7cc17",
+        storageBucket: "book-app-7cc17.appspot.com",
+        messagingSenderId: "129240028166",
+        appId: "1:129240028166:web:9b0cff6a7ca84e11de1f87",
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      const db = firebase.firestore();
+    </script>
+
+    <script type="module" src="./bai3.js"></script>
+  </body>
+</html>
